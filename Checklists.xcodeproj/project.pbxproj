@@ -18,6 +18,7 @@
 		9858B757167EA19100E07DF4 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9858B756167EA19100E07DF4 /* Default-568h@2x.png */; };
 		9858B75A167EA19100E07DF4 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9858B758167EA19100E07DF4 /* MainStoryboard.storyboard */; };
 		9858B75D167EA19100E07DF4 /* ChecklistsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9858B75C167EA19100E07DF4 /* ChecklistsViewController.m */; };
+		9858B765167EAFBB00E07DF4 /* ChecklistItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 9858B764167EAFBB00E07DF4 /* ChecklistItem.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,8 @@
 		9858B759167EA19100E07DF4 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		9858B75B167EA19100E07DF4 /* ChecklistsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChecklistsViewController.h; sourceTree = "<group>"; };
 		9858B75C167EA19100E07DF4 /* ChecklistsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChecklistsViewController.m; sourceTree = "<group>"; };
+		9858B763167EAFBB00E07DF4 /* ChecklistItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChecklistItem.h; sourceTree = "<group>"; };
+		9858B764167EAFBB00E07DF4 /* ChecklistItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChecklistItem.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +91,8 @@
 				9858B758167EA19100E07DF4 /* MainStoryboard.storyboard */,
 				9858B75B167EA19100E07DF4 /* ChecklistsViewController.h */,
 				9858B75C167EA19100E07DF4 /* ChecklistsViewController.m */,
+				9858B763167EAFBB00E07DF4 /* ChecklistItem.h */,
+				9858B764167EAFBB00E07DF4 /* ChecklistItem.m */,
 				9858B747167EA19100E07DF4 /* Supporting Files */,
 			);
 			path = Checklists;
@@ -177,6 +182,7 @@
 				9858B74D167EA19100E07DF4 /* main.m in Sources */,
 				9858B751167EA19100E07DF4 /* ChecklistsAppDelegate.m in Sources */,
 				9858B75D167EA19100E07DF4 /* ChecklistsViewController.m in Sources */,
+				9858B765167EAFBB00E07DF4 /* ChecklistItem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
