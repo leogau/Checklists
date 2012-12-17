@@ -14,16 +14,24 @@
 
 @implementation ChecklistsViewController
 
-- (void)viewDidLoad
+#pragma mark - table view data source methods
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    return 1;
 }
 
-- (void)didReceiveMemoryWarning
+- (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ChecklistItem"];
+    return cell;
+}
+
+#pragma mark - view controller methods
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
+{
+    return (toInterfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
 @end
