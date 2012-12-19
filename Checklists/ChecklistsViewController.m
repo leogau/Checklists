@@ -7,9 +7,10 @@
 //
 
 #import "ChecklistsViewController.h"
+#import "ChecklistItem.h"
 
 @interface ChecklistsViewController ()
-
+@property NSMutableArray *items;
 @end
 
 @implementation ChecklistsViewController
@@ -18,19 +19,33 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 5;
+    return [self.items count];
 }
 
 - (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ChecklistItem"];
-    UILabel *label = (UILabel *)[cell viewWithTag:1000];
-    
-    if (indexPath.row == 2) {
-        label.text = @"Brush my teeth";
-    }
+    ChecklistItem *item = [self.items objectAtIndex:indexPath.row];
+
+    [self configureTextForCell:cell withChecklistItem:item];
+    [self configureCheckmarkForCell:cell withChecklistItem:item];
     
     return cell;
+}
+
+- (void)configureCheckmarkForCell:(UITableViewCell *)cell withChecklistItem:(ChecklistItem *)item
+{
+    if (item.checked) {
+        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    } else {
+        cell.accessoryType = UITableViewCellAccessoryNone;
+    }
+}
+
+- (void)configureTextForCell:(UITableViewCell *)cell withChecklistItem:(ChecklistItem *)item
+{
+    UILabel *label = (UILabel *)[cell viewWithTag:1000];
+    label.text = item.text;
 }
 
 #pragma mark - table view delegate methods
@@ -39,16 +54,20 @@
 {
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     
-    if (cell.accessoryType == UITableViewCellAccessoryNone) {
-        cell.accessoryType = UITableViewCellAccessoryCheckmark;
-    } else {
-        cell.accessoryType = UITableViewCellAccessoryNone;
-    }
+    ChecklistItem *item = [self.items objectAtIndex:indexPath.row];
+    [item toggleChecked];
+    
+    [self configureCheckmarkForCell:cell withChecklistItem:item];
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 #pragma mark - view controller methods
+
+- (void)viewDidLoad
+{
+    self.items = [[NSMutableArray alloc] initWithCapacity:20];
+}
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
 {
