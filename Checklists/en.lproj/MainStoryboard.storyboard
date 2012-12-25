@@ -4,10 +4,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
     </dependencies>
     <scenes>
-        <!--Checklists View Controller - Checklists-->
+        <!--Checklist View Controller - Checklist-->
         <scene sceneID="dZl-vN-1D4">
             <objects>
-                <tableViewController id="SkS-Px-n0l" customClass="ChecklistsViewController" sceneMemberID="viewController">
+                <tableViewController id="SkS-Px-n0l" customClass="ChecklistViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="qZK-va-Mkk">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -44,7 +44,7 @@
                             <outlet property="delegate" destination="SkS-Px-n0l" id="rwp-Je-kQh"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Checklists" id="o7V-EC-4P9">
+                    <navigationItem key="navigationItem" title="Checklist" id="o7V-EC-4P9">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Vwk-5W-8Db">
                             <connections>
                                 <segue destination="hpT-LB-2g7" kind="modal" identifier="AddItem" id="Kac-3g-Mvy"/>
@@ -159,8 +159,8 @@
         </scene>
     </scenes>
     <classes>
-        <class className="ChecklistsViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ChecklistsViewController.h"/>
+        <class className="ChecklistViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ChecklistViewController.h"/>
         </class>
         <class className="ItemDetailViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ItemDetailViewController.h"/>
