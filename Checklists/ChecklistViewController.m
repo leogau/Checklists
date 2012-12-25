@@ -167,6 +167,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.title = self.list.name;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
