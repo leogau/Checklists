@@ -9,6 +9,7 @@
 #import "AllListsViewController.h"
 #import "Checklist.h"
 #import "ChecklistViewController.h"
+#import "ListDetailViewController.h"
 
 @interface AllListsViewController ()
 
@@ -49,7 +50,7 @@
     
     Checklist *list = [self.lists objectAtIndex:indexPath.row];
     cell.textLabel.text = list.name;
-    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
     
     return cell;
 }
@@ -68,7 +69,59 @@
     if ([segue.identifier isEqualToString:@"ShowChecklist"]) {
         ChecklistViewController *checklistViewController = segue.destinationViewController;
         checklistViewController.list = sender;
+    } else if ([segue.identifier isEqualToString:@"AddChecklist"]) {
+        UINavigationController *navcon = segue.destinationViewController;
+        ListDetailViewController *listDetailViewController = (ListDetailViewController *)navcon.topViewController;
+        listDetailViewController.delegate = self;
+        listDetailViewController.checklistToEdit = nil;
     }
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [self.lists removeObjectAtIndex:indexPath.row];
+    
+    [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+}
+
+- (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
+{
+    UINavigationController *navcon = [self.storyboard instantiateViewControllerWithIdentifier:@"ListNavigationController"];
+    ListDetailViewController *listViewController = (ListDetailViewController *)navcon.topViewController;
+    listViewController.delegate = self;
+    
+    Checklist *checklist = [self.lists objectAtIndex:indexPath.row];
+    listViewController.checklistToEdit = checklist;
+
+    [self presentViewController:navcon animated:YES completion:nil];
+}
+
+#pragma mark - ListDetailViewController delegate
+
+- (void)listDetailViewControllerDidCancel:(ListDetailViewController *)controller
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)listDetailViewController:(ListDetailViewController *)controller didFinishAddingChecklist:(Checklist *)checklist
+{
+    int newRowIndex = [self.lists count];
+    [self.lists addObject:checklist];
+    
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:newRowIndex inSection:0];
+    [self.tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:YES];
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)listDetailViewController:(ListDetailViewController *)controller didFinishEditingChecklist:(Checklist *)checklist
+{
+    int row = [self.lists indexOfObject:checklist];
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:row inSection:0];
+    UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
+    cell.textLabel.text = checklist.name;
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end

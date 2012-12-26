@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "ChecklistItem.h"
+#import "ListDetailViewController.h"
 
-@interface AllListsViewController : UITableViewController
+@interface AllListsViewController : UITableViewController <ListDetailViewControllerDelegate>
 
 @property (strong, nonatomic) NSMutableArray *lists;
 
