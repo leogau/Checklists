@@ -11,5 +11,6 @@
 @interface Checklist : NSObject
 
 @property (strong, nonatomic) NSString *name;
+@property (strong, nonatomic) NSMutableArray *items;
 
 @end

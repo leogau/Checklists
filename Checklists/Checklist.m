@@ -10,4 +10,13 @@
 
 @implementation Checklist
 
+- (NSMutableArray *)items
+{
+    if (!_items) {
+        _items = [[NSMutableArray alloc] initWithCapacity:20];
+    }
+    
+    return _items;
+}
+
 @end
