@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12C2034" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="b9b-6H-c9L">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12C2034" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="b9b-6H-c9L">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
     </dependencies>
@@ -20,16 +20,19 @@
                                     <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="1000" contentMode="left" text="Checklist item" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ssY-vA-mho">
-                                            <rect key="frame" x="39" y="0.0" width="241" height="43"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="1000" contentMode="left" text="Checklist item" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ssY-vA-mho">
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="241" id="2fh-vk-W64"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </label>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="1001" contentMode="left" text="√" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="8LI-Ut-F3Y">
-                                            <rect key="frame" x="0.0" y="0.0" width="31" height="43"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="1001" contentMode="left" text="√" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8LI-Ut-F3Y">
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="43" id="EZH-OX-wKN"/>
+                                                <constraint firstAttribute="width" constant="31" id="Ilr-qN-lYi"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -37,6 +40,13 @@
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+                                <constraints>
+                                    <constraint firstItem="8LI-Ut-F3Y" firstAttribute="top" secondItem="iSP-hN-UQs" secondAttribute="top" type="default" id="EtS-H3-wxD"/>
+                                    <constraint firstItem="ssY-vA-mho" firstAttribute="top" secondItem="iSP-hN-UQs" secondAttribute="top" type="default" id="M7j-FD-3Ce"/>
+                                    <constraint firstItem="ssY-vA-mho" firstAttribute="bottom" secondItem="8LI-Ut-F3Y" secondAttribute="bottom" type="default" id="MRQ-zR-8YT"/>
+                                    <constraint firstItem="8LI-Ut-F3Y" firstAttribute="leading" secondItem="iSP-hN-UQs" secondAttribute="leading" type="default" id="Z7T-Xo-RXG"/>
+                                    <constraint firstItem="ssY-vA-mho" firstAttribute="leading" secondItem="8LI-Ut-F3Y" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="v6y-Uy-MSq"/>
+                                </constraints>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -93,9 +103,11 @@
                                             <rect key="frame" x="10" y="1" width="300" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name of the item" adjustsFontSizeToFit="NO" minimumFontSize="17" id="O02-Kv-8sy">
-                                                    <rect key="frame" x="20" y="7" width="260" height="30"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name of the item" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="O02-Kv-8sy">
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="gkh-Mp-cfP"/>
+                                                        <constraint firstAttribute="width" constant="260" id="rrY-lt-5K6"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                                     <connections>
@@ -106,6 +118,10 @@
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
+                                        <constraints>
+                                            <constraint firstItem="O02-Kv-8sy" firstAttribute="centerX" secondItem="dxQ-W3-zZi" secondAttribute="centerX" type="default" id="HA2-lI-2tP"/>
+                                            <constraint firstItem="O02-Kv-8sy" firstAttribute="centerY" secondItem="dxQ-W3-zZi" secondAttribute="centerY" type="default" id="UwE-nO-z1Q"/>
+                                        </constraints>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -219,9 +235,11 @@
                                             <rect key="frame" x="10" y="1" width="300" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name of the checklist" adjustsFontSizeToFit="NO" minimumFontSize="17" id="Wdk-0I-bBm">
-                                                    <rect key="frame" x="20" y="7" width="260" height="30"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name of the checklist" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wdk-0I-bBm">
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="GzW-aA-xIa"/>
+                                                        <constraint firstAttribute="width" constant="260" id="oda-Kr-V7V"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                                     <connections>
@@ -231,6 +249,10 @@
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
+                                        <constraints>
+                                            <constraint firstItem="Wdk-0I-bBm" firstAttribute="centerX" secondItem="MSW-Bg-X0x" secondAttribute="centerX" type="default" id="dAK-hX-cya"/>
+                                            <constraint firstItem="Wdk-0I-bBm" firstAttribute="centerY" secondItem="MSW-Bg-X0x" secondAttribute="centerY" type="default" id="hf2-8q-0Vp"/>
+                                        </constraints>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -262,6 +284,35 @@
             <point key="canvasLocation" x="1171" y="754"/>
         </scene>
     </scenes>
+    <classes>
+        <class className="AllListsViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AllListsViewController.h"/>
+        </class>
+        <class className="ChecklistViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ChecklistViewController.h"/>
+        </class>
+        <class className="ItemDetailViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ItemDetailViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="cancel"/>
+                <relationship kind="action" name="save"/>
+                <relationship kind="outlet" name="saveBarButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="textField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="ListDetailViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ListDetailViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="cancel"/>
+                <relationship kind="action" name="done"/>
+                <relationship kind="outlet" name="doneBarButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="textField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

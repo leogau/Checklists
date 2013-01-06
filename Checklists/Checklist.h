@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Checklist : NSObject
+@interface Checklist : NSObject <NSCoding>
 
 @property (strong, nonatomic) NSString *name;
 @property (strong, nonatomic) NSMutableArray *items;

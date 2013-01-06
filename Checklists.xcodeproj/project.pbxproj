@@ -23,6 +23,7 @@
 		9866E220168A3A5400658E57 /* AllListsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9866E21F168A3A5400658E57 /* AllListsViewController.m */; };
 		9866E223168A3D7300658E57 /* Checklist.m in Sources */ = {isa = PBXBuildFile; fileRef = 9866E222168A3D7300658E57 /* Checklist.m */; };
 		9866E226168AAA3600658E57 /* ListDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9866E225168AAA3500658E57 /* ListDetailViewController.m */; };
+		989C57561691131900EF01A5 /* DataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 989C57551691131900EF01A5 /* DataModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,8 @@
 		9866E222168A3D7300658E57 /* Checklist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Checklist.m; sourceTree = "<group>"; };
 		9866E224168AAA3500658E57 /* ListDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListDetailViewController.h; sourceTree = "<group>"; };
 		9866E225168AAA3500658E57 /* ListDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListDetailViewController.m; sourceTree = "<group>"; };
+		989C57541691131900EF01A5 /* DataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataModel.h; sourceTree = "<group>"; };
+		989C57551691131900EF01A5 /* DataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +106,8 @@
 				9858B758167EA19100E07DF4 /* MainStoryboard.storyboard */,
 				9866E221168A3D7300658E57 /* Checklist.h */,
 				9866E222168A3D7300658E57 /* Checklist.m */,
+				989C57541691131900EF01A5 /* DataModel.h */,
+				989C57551691131900EF01A5 /* DataModel.m */,
 				9866E21E168A3A5400658E57 /* AllListsViewController.h */,
 				9866E21F168A3A5400658E57 /* AllListsViewController.m */,
 				9858B75B167EA19100E07DF4 /* ChecklistViewController.h */,
@@ -207,6 +212,7 @@
 				9866E220168A3A5400658E57 /* AllListsViewController.m in Sources */,
 				9866E223168A3D7300658E57 /* Checklist.m in Sources */,
 				9866E226168AAA3600658E57 /* ListDetailViewController.m in Sources */,
+				989C57561691131900EF01A5 /* DataModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,9 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "ChecklistItem.h"
 #import "ListDetailViewController.h"
+#import "DataModel.h"
 
-@interface AllListsViewController : UITableViewController <ListDetailViewControllerDelegate>
+@interface AllListsViewController : UITableViewController <ListDetailViewControllerDelegate, UINavigationControllerDelegate>
 
-@property (strong, nonatomic) NSMutableArray *lists;
+@property (strong, nonatomic) DataModel *dataModel;
 
 @end

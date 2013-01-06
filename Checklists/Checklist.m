@@ -19,4 +19,23 @@
     return _items;
 }
 
+#pragma mark - NSCoding delegate
+
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super init];
+    if (self) {
+        self.name = [aDecoder decodeObjectForKey:@"Name"];
+        self.items = [aDecoder decodeObjectForKey:@"Items"];
+    }
+    
+    return self;
+}
+
+- (void)encodeWithCoder:(NSCoder *)aCoder
+{
+    [aCoder encodeObject:self.name forKey:@"Name"];
+    [aCoder encodeObject:self.items forKey:@"Items"];
+}
+
 @end

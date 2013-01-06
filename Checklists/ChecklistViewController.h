@@ -12,6 +12,6 @@
 
 @interface ChecklistViewController : UITableViewController <ItemDetailViewControllerDelegate>
 
-@property (strong, nonatomic) Checklist *list;
+@property (strong, nonatomic) Checklist *checklist;
 
 @end
