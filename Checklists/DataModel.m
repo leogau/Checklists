@@ -7,10 +7,12 @@
 //
 
 #import "DataModel.h"
+#import "Checklist.h"
 
 #define CHECKLIST_INDEX_KEY @"ChecklistIndex"
 #define ARCHIVE_KEY @"Checklists"
 #define PATH_COMPONENT @"Checklists.plist"
+#define FIRST_TIME_KEY @"FirstTime"
 
 @implementation DataModel
 
@@ -20,6 +22,7 @@
     if (self) {
         [self loadChecklists];
         [self registerDefaults];
+        [self handleFirstTime];
     }
     
     return self;
@@ -27,8 +30,20 @@
 
 - (void)registerDefaults
 {
-    NSDictionary *dictionary = @{CHECKLIST_INDEX_KEY : @-1};
+    NSDictionary *dictionary = @{CHECKLIST_INDEX_KEY : @-1, FIRST_TIME_KEY: @YES};
     [[NSUserDefaults standardUserDefaults] registerDefaults:dictionary];
+}
+
+- (void)handleFirstTime
+{
+    BOOL firstTime = [[NSUserDefaults standardUserDefaults] boolForKey:FIRST_TIME_KEY];
+    if (firstTime) {
+        Checklist *checklist = [[Checklist alloc] init];
+        checklist.name = @"List";
+        [self.lists addObject:checklist];
+        [self setIndexForSelectedChecklist:0];
+        [[NSUserDefaults standardUserDefaults] setBool:NO forKey:FIRST_TIME_KEY];
+    }
 }
 
 - (int)indexOfSelectedChecklist
